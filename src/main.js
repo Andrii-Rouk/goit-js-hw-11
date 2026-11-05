@@ -1,5 +1,2 @@
-// Тут пиши JavaScript свого домашнього завдання.
-// Додаткові модулі створюй поруч у src/ і імпортуй їх сюди:
-//   import { something } from './something.js';
-
-console.log('Шаблон готовий. Можна писати код 🚀');
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
