@@ -4,8 +4,6 @@ import 'simplelightbox/dist/simple-lightbox.min.css';
 const loader = document.querySelector('.loader');
 const gallery = document.querySelector('.gallery');
 
-// 1. Створюємо екземпляр SimpleLightbox
-
 let lightbox = new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
   captionDelay: 250,

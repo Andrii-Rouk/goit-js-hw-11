@@ -9,14 +9,9 @@ const sourceRoot = resolve(projectRoot, 'src');
 
 export default defineConfig(({ command }) => {
   return {
-    // base для GitHub Pages береться з назви репозиторію під час деплою;
-    // локально (без GITHUB_REPOSITORY) — '/'
     base: process.env.GITHUB_REPOSITORY
       ? `/${process.env.GITHUB_REPOSITORY.split('/')[1]}/`
       : '/',
-    // define: {
-    //   [command === 'serve' ? 'global' : '_global']: {},
-    // },
     define: {
       global: 'globalThis',
     },
@@ -24,8 +19,7 @@ export default defineConfig(({ command }) => {
     build: {
       sourcemap: true,
       rollupOptions: {
-        // підхоплює будь-який src/*.html — мультисторінковість «безкоштовно»
-        input: glob.sync('*.html', { cwd: sourceRoot, absolute: true }),
+        input: glob.sync('./src/*.html', { absolute: true }),
         output: {
           manualChunks(id) {
             if (id.includes('node_modules')) {
